@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .upload-container {
+            margin-top: 50px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px; /* Added */
+        }
+        label:hover {
+            background-color: #0056b3;
+        }
+        p {
+            margin-top: 20px;
+        }
+        .file-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        button[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 40px; /* Increased padding */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Dog & Cat Image Classifier</h1>
+        <h2>Upload Image Of Your Choice</h2>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png">
+            <label for="file">Choose File</label>
+            <p class="file-name" id="file-name">No file chosen</p> 
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('file').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.getElementById('file-name').innerText = 'File chosen: ' + fileName;
+        });
+    </script>
+</body>
+</html>
