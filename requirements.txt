@@ -2,3 +2,6 @@ Flask
 tensorflow
 numpy
 Pillow
+requests
+openpyxl
+psutil
